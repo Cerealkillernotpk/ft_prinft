@@ -12,6 +12,11 @@
 
 #include "libftprintf.h"
 
+int ft_percent(char c, int i)
+{
+	ft_putchar_fd(c, 1);
+	i += 2;
+}
 int ft_convertions(char c, )
 {
 	int i;
@@ -19,25 +24,8 @@ int ft_convertions(char c, )
 
 	if (c == 'c')
 
-		else if (c == 's')
-
-			else if (c == 'p')
-
-				else if (c == 'd')
-
-					else if (c == 'i')
-
-						else if (c == 'u')
-
-							else if (c == 'x')
-
-								else if (c == 'X')
-
-									if (c == '%')
-		{
-			ft_putchar_fd(c, 1);
-			i += 2;
-		}
+		else if (c == 's') else if (c == 'p') else if (c == 'd') else if (c == 'i') else if (c == 'u') else if (c == 'x') else if (c == 'X') else if (c == '%')
+			i = ft_percent(c, i);
 	return (i)
 }
 
@@ -58,8 +46,10 @@ int ft_printf(const char *str, ...)
 		}
 		else
 		{
-			j = ft_convertions(str[i + 1], );
-			i += j;
+			j += ft_convertions(str[i + 1], );
+			i += 2;
 		}
 	}
+	i += j;
+	return (i);
 }
