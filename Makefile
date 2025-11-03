@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 16:57:19 by adakhama          #+#    #+#              #
-#    Updated: 2025/11/03 16:30:55 by adakhama         ###   ########.fr        #
+#    Updated: 2025/11/03 16:34:31 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra -g
 
-NAME = libft.a
+NAME = libftprintf.a
 
 SRC = ft_putchar.c\
 	ft_printf.c\
