@@ -6,13 +6,13 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:40:46 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/03 16:10:41 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:28:28 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void ft_putchar_fd(char c, size_t len)
+void	ft_putchar(char c, size_t len)
 {
 		write(1, &c, 1);
 		len++;

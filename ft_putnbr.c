@@ -6,13 +6,13 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:08:18 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/03 16:16:37 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:28:19 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putnbpos(int nb, int len)
+void	ft_putnbpos(int nb, size_t len)
 {
 	if (nb > 0)
 	{
@@ -23,7 +23,7 @@ void	ft_putnbpos(int nb, int len)
 	}
 }
 
-void	ft_putnbr(int n, int len)
+void	ft_putnbr(int n, size_t len)
 {
 	if (n == 0)
 	{

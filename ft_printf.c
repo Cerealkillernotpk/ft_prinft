@@ -6,31 +6,25 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:35:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/03 16:10:31 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:31:23 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int ft_percent(char c, int i)
-{
-	ft_putchar_fd(c, 1);
-	i += 2;
-}
 static void	ft_convertions(char c, va_list list, size_t len, int i)
 {
 	if (c == 'c')
 		ft_putchar(va_arg(list, char), &len);
 	else if (c == 's')
 		ft_putstr(va_arg(list, char *), &len);
-	else if (c == 'p')
-		
+	// else if (c == 'p')
 	else if (c == 'd')
-		ft_putnbr(va_arg(list, int), &len)
+		ft_putnbr(va_arg(list, int), &len);
 	else if (c == 'i')
-		ft_putnbr(va_arg(list, int), &len)
+		ft_putnbr(va_arg(list, int), &len);
 	else if (c == 'u')
-		ft_putnbr(va_arg(list, unsigned int), &len)
+		ft_putnbr(va_arg(list, unsigned int), &len);
 	else if (c == 'x')
 		ft_putbase("0123456789abcdef", va_arg(list, size_t), &len);
 	else if (c == 'X')
@@ -41,8 +35,8 @@ static void	ft_convertions(char c, va_list list, size_t len, int i)
 
 int ft_printf(const char *str, ...)
 {
-	size_t i;
-	int	len;
+	size_t	i;
+	size_t	len;
 	va_list list;
 
 	i = 0;
