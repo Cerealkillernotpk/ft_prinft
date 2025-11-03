@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:35:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/03 16:57:37 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:00:41 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_convertions(char c, va_list list, size_t *len)
 {
 	if (c == 'c')
-		ft_putchar(va_arg(list, char), len);
+		ft_putchar(va_arg(list, int), len);
 	else if (c == 's')
 		ft_putstr(va_arg(list, char *), len);
 	// else if (c == 'p')

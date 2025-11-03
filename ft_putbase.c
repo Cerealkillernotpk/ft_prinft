@@ -6,13 +6,13 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:57:00 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/03 16:50:45 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:59:26 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void    ft_putbase(char *base, size_t nbr, size_t *len)
+void    ft_putbase(char *base,size_t nbr, size_t *len)
 {
     size_t  baselen;
 
