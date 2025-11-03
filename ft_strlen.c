@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 14:40:46 by adakhama          #+#    #+#             */
-/*   Updated: 2025/10/29 14:24:55 by adakhama         ###   ########.fr       */
+/*   Created: 2025/10/14 09:40:27 by adakhama          #+#    #+#             */
+/*   Updated: 2025/11/03 16:18:31 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void ft_putchar_fd(char c, int fd)
+size_t	ft_strlen(const char *str)
 {
-	if (fd > -1)
-		write(fd, &c, 1);
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 16:57:19 by adakhama          #+#    #+#              #
-#    Updated: 2025/10/29 13:52:09 by adakhama         ###   ########.fr        #
+#    Updated: 2025/11/03 16:17:20 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,13 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
-SRC = ft_putchar_fd.c\
-	ft_printf.c
+SRC = ft_putchar.c\
+	ft_printf.c\
+	ft_putstr.c\
+	ft_strlen.c\
+	ft_putbase.c\
+	ft_putnbr.c\
+	main.c
 
 OBJ = $(SRC:.c=.o)
 
