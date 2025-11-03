@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 16:14:46 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/03 16:18:27 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/03 17:09:14 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int main()
 {
-    ft_printf("je suis moi");
+    int i;
+    
+    i = ft_printf("je suis moi\n");
+    ft_printf("%d", i);
 }
