@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 09:46:56 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/04 14:11:42 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:19:40 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-size_t	ft_putchar(int c);
+void	ft_putchar(int c, size_t *len);
 int     ft_printf(const char *, ...);
-size_t	ft_putstr(char *s);
+void	ft_putstr(char *s, size_t *len);
 size_t	ft_strlen(const char *str);
-size_t  ft_putbase(char *base, size_t nbr, int verif);
-size_t     ft_putnbr(int n);
+void    ft_putbase(char *base, size_t nbr, int verif, size_t *len);
+void	ft_putnbr(int n, size_t *len);
 int     main();
 
 #endif

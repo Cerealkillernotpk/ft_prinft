@@ -6,36 +6,32 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:35:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 14:11:55 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:21:10 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static size_t	ft_convertions(char c, va_list list)
+static void	ft_convertions(char c, va_list list, size_t *len)
 {
-	size_t len;
-
-	len = 0;
 	if (c == 'c')
-		len += ft_putchar(va_arg(list, int));
+		ft_putchar(va_arg(list, int), len);
 	else if (c == 's')
-		len += ft_putstr(va_arg(list, char *));
+		ft_putstr(va_arg(list, char *), len);
 	else if (c == 'p')
-		len += ft_putbase("0123456789abcdef", (size_t) va_arg(list, void *), 0);
+		ft_putbase("0123456789abcdef", (size_t) va_arg(list, void *), 0, len);
 	else if (c == 'd')
-		len += ft_putnbr(va_arg(list, int));
+		ft_putnbr(va_arg(list, int), len);
 	else if (c == 'i')
-		len += ft_putnbr(va_arg(list, int));
+		ft_putnbr(va_arg(list, int), len);
 	else if (c == 'u')
-		len += ft_putnbr(va_arg(list, unsigned int));
+		ft_putnbr(va_arg(list, unsigned int), len);
 	else if (c == 'x')
-		len += ft_putbase("0123456789abcdef", va_arg(list, size_t), 1);
+		ft_putbase("0123456789abcdef", va_arg(list, size_t), 1, len);
 	else if (c == 'X')
-		len += ft_putbase("0123456789ABCDEF", va_arg(list, size_t), 1);
+		ft_putbase("0123456789ABCDEF", va_arg(list, size_t), 1, len);
 	else if (c == '%')
-		len += ft_putchar(c);
-	return (len);
+		ft_putchar(c, len);
 }
 
 int ft_printf(const char *str, ...)
@@ -51,12 +47,12 @@ int ft_printf(const char *str, ...)
 	{
 		if (str[i] != '%')
 		{
-			len += ft_putchar(str[i]);
+			ft_putchar(str[i], &len);
 			i++;
 		}
 		else
 		{
-			len += ft_convertions(str[i + 1], list);
+			ft_convertions(str[i + 1], list, &len);
 			i += 2;
 		}
 	}
