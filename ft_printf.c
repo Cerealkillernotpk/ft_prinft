@@ -6,11 +6,11 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:35:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 15:21:10 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/04 18:03:00 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static void	ft_convertions(char c, va_list list, size_t *len)
 {
@@ -21,24 +21,24 @@ static void	ft_convertions(char c, va_list list, size_t *len)
 	else if (c == 'p')
 		ft_putbase("0123456789abcdef", (size_t) va_arg(list, void *), 0, len);
 	else if (c == 'd')
-		ft_putnbr(va_arg(list, int), len);
+		ft_putnbr((long)va_arg(list, int), len);
 	else if (c == 'i')
-		ft_putnbr(va_arg(list, int), len);
+		ft_putnbr((long)va_arg(list, int), len);
 	else if (c == 'u')
 		ft_putnbr(va_arg(list, unsigned int), len);
 	else if (c == 'x')
-		ft_putbase("0123456789abcdef", va_arg(list, size_t), 1, len);
+		ft_putbase("0123456789abcdef", va_arg(list, unsigned int), 1, len);
 	else if (c == 'X')
-		ft_putbase("0123456789ABCDEF", va_arg(list, size_t), 1, len);
+		ft_putbase("0123456789ABCDEF", va_arg(list, unsigned int), 1, len);
 	else if (c == '%')
 		ft_putchar(c, len);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	size_t	i;
 	size_t	len;
-	va_list list;
+	va_list	list;
 
 	i = 0;
 	len = 0;

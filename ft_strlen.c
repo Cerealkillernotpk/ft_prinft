@@ -6,11 +6,11 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 09:40:27 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/03 16:18:31 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/04 16:36:44 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 size_t	ft_strlen(const char *str)
 {

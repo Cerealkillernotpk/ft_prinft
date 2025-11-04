@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 16:57:19 by adakhama          #+#    #+#              #
-#    Updated: 2025/11/03 17:02:24 by adakhama         ###   ########.fr        #
+#    Updated: 2025/11/04 16:17:07 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ SRC = ft_putchar.c\
 	ft_putstr.c\
 	ft_strlen.c\
 	ft_putbase.c\
-	ft_putnbr.c\
-	main.c
+	ft_putnbr.c
 
 OBJ = $(SRC:.c=.o)
 
