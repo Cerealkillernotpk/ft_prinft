@@ -6,24 +6,25 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:57:00 by adakhama          #+#    #+#             */
-/*   Updated: 2025/11/03 17:18:49 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:47:04 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-size_t    ft_putbase(char *base,size_t nbr)
+size_t    ft_putbase(char *base, size_t nbr, int verif, size_t len)
 {
     size_t  baselen;
-    size_t  len;
 
-    len = 0;
     baselen = ft_strlen(base);
-    if (nbr > baselen)
+    if (verif == 0)
     {
-        ft_putbase(base, nbr/baselen);
-        len++;
+        write(1,"0x",2);
+        verif++;
     }
+    if (nbr > baselen)
+        ft_putbase(base, nbr/baselen, verif, len);
+    len++;
     ft_putchar(base[nbr%baselen]);
     return (len);
 }

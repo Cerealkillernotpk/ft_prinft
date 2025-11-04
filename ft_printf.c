@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:35:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/03 17:22:39 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:45:39 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static size_t	ft_convertions(char c, va_list list)
 		len += ft_putchar(va_arg(list, int));
 	else if (c == 's')
 		len += ft_putstr(va_arg(list, char *));
-	// else if (c == 'p')
+	else if (c == 'p')
+		len += ft_putbase("0123456789abcdef", (size_t) va_arg(list, void *), 0, len);
 	else if (c == 'd')
 		len += ft_putnbr(va_arg(list, int));
 	else if (c == 'i')
@@ -29,9 +30,9 @@ static size_t	ft_convertions(char c, va_list list)
 	else if (c == 'u')
 		len += ft_putnbr(va_arg(list, unsigned int));
 	else if (c == 'x')
-		len += ft_putbase("0123456789abcdef", va_arg(list, size_t));
+		len += ft_putbase("0123456789abcdef", va_arg(list, size_t), 1, len);
 	else if (c == 'X')
-		len += ft_putbase("0123456789ABCDEF", va_arg(list, size_t));
+		len += ft_putbase("0123456789ABCDEF", va_arg(list, size_t), 1, len);
 	else if (c == '%')
 		len += ft_putchar(c);
 	return (len);
