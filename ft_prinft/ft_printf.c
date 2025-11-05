@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 00:35:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/11/04 18:03:00 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:25:32 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,12 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	len = 0;
 	va_start(list, str);
+	if (str[i] == '%' && str[i + 1] == '\0')
+		return (0);
 	while (str[i])
 	{
 		if (str[i] != '%')
-		{
-			ft_putchar(str[i], &len);
-			i++;
-		}
+			ft_putchar(str[i++], &len);
 		else
 		{
 			ft_convertions(str[i + 1], list, &len);
